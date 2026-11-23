@@ -1,0 +1,1 @@
+{"routes":[{"path":"/","title":"Home"},{"path":"/submit","title":"Submit a confession"},{"path":"/confessions","title":"Confessions"},{"path":"/privacy","title":"Privacy"},{"path":"/admin","title":"Admin"},{"path":"/admin/login","title":"Admin login"},{"path":"/admin/setup","title":"Admin setup"}]}
