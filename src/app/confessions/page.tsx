@@ -70,10 +70,10 @@ export default function ConfessionsPage() {
   }
 
   return (
-    <div className="min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-[#E5E7EB]/80 bg-[#FAF9F7]/90 backdrop-blur-md">
+    <div className="site-shell min-h-screen">
+      <header className="sticky top-0 z-50 topbar">
         <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4">
-          <Link href="/" className="text-xl font-semibold">WHISPER</Link>
+          <Link href="/" className="brand text-lg"><span className="brand-mark">✦</span> WHISPER</Link>
           <Link href="/submit" className="btn-primary text-sm">
             Confess
           </Link>
@@ -81,14 +81,14 @@ export default function ConfessionsPage() {
       </header>
 
       <main className="mx-auto max-w-2xl px-4 py-8">
-        <h1 className="mb-6 text-2xl font-semibold text-[#211F27]">Confessions</h1>
+        <div className="mb-6"><p className="hero-eyebrow">✦ &nbsp; Community stories</p><h1 className="page-heading mt-4 text-3xl font-extrabold sm:text-4xl">Confessions</h1><p className="mt-2 text-sm text-[#777487]">Anonymous thoughts from your community.</p></div>
 
         {/* Tabs */}
         <div className="mb-4 flex gap-2">
           <button
             onClick={() => setSort('latest')}
             className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
-              sort === 'latest' ? 'bg-[#7955D6] text-white' : 'bg-white text-[#6B7280] border border-[#E5E7EB]'
+              sort === 'latest' ? 'bg-[#7654D8] text-white shadow-sm' : 'category-chip'
             }`}
           >
             Latest
@@ -96,7 +96,7 @@ export default function ConfessionsPage() {
           <button
             onClick={() => setSort('trending')}
             className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
-              sort === 'trending' ? 'bg-[#7955D6] text-white' : 'bg-white text-[#6B7280] border border-[#E5E7EB]'
+              sort === 'trending' ? 'bg-[#7654D8] text-white shadow-sm' : 'category-chip'
             }`}
           >
             Trending
@@ -111,8 +111,8 @@ export default function ConfessionsPage() {
               onClick={() => setCategory(c)}
               className={`rounded-full px-3 py-1 text-xs font-medium transition ${
                 category === c
-                  ? 'bg-[#211F27] text-white'
-                  : 'bg-white text-[#6B7280] border border-[#E5E7EB]'
+                  ? 'bg-[#29243A] text-white'
+                  : 'category-chip'
               }`}
             >
               {c === 'all' ? 'All' : c}
@@ -142,7 +142,7 @@ export default function ConfessionsPage() {
 
         <div className="space-y-4">
           {confessions.map((c) => (
-            <article key={c.id} className="card">
+            <article key={c.id} className="confession-card">
               {c.category && (
                 <span className="mb-2 inline-block rounded-full bg-[#7955D6]/10 px-2.5 py-0.5 text-xs font-medium text-[#7955D6]">
                   {c.category}
